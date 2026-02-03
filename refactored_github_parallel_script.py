@@ -9,11 +9,12 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 load_dotenv()
 
 # --- Configuration ---
-DB_HOST = "localhost"
-DB_USER = "postgres"
-DB_PASS = "postgres"
-DB_PORT = "5432"
-DB_NAME = "github-actions-db"
+# --- Configuration ---
+DB_HOST = os.environ.get('DB_HOST', 'localhost')
+DB_USER = os.environ.get('DB_USER', 'postgres')
+DB_PASS = os.environ.get('DB_PASS', 'postgres')
+DB_PORT = os.environ.get('DB_PORT', '5432')
+DB_NAME = os.environ.get('DB_NAME', 'sonardashboard')
 
 GITHUB_REPOS = [
     "grafana/grafana",
