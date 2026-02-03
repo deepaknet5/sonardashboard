@@ -73,8 +73,7 @@ resource "aws_codebuild_project" "sonar_dashboard_build" {
   }
 
   cache {
-    type  = "LOCAL"
-    modes = ["LOCAL_DOCKER_LAYER_CACHE", "LOCAL_SOURCE_CACHE"]
+    type = "NO_CACHE"
   }
 
   environment {
